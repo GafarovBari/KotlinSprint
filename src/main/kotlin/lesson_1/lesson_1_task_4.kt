@@ -17,5 +17,4 @@ fun main() {
     $partOfYear
     $apogee
     """.trimIndent())
-
 }
