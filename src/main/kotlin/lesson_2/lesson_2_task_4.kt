@@ -14,6 +14,7 @@ fun main() {
 
     println("Увеличение добычи кристаллической руды (20%): $crystalBuff")
     println("Увеличение добычи железной руды (20%): $ironeBuff")
+
 }
 
 const val BUFF_ORE: Int = 20
