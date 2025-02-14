@@ -7,8 +7,6 @@ fun main() {
     var minuts: String = "07"
 
     println(yearOfFlight)
-    //println(hours)
-    //println(minuts)
 
     hours = "10"
     minuts = "55"
