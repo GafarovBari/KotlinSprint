@@ -2,13 +2,17 @@ package org.example.lesson_1
 
 fun main() {
 
-    val seconds:Int = 6488
-    val hours:Int = (seconds / THE_CONSTANT_TIME * THE_CONSTANT_TIME)
-    val minuts:Int = (seconds - hours * THE_CONSTANT_TIME * THE_CONSTANT_TIME) / THE_CONSTANT_TIME
-    val remainingSeconds:Int = seconds - hours * THE_CONSTANT_TIME * THE_CONSTANT_TIME - minuts * THE_CONSTANT_TIME
-    val addZero:Char = '0'
+    val seconds: Int = 6488
+    val minutsSpace: Int
+    val secondsSpace: Int
+    val hoursSpace: Int
 
-    println("$addZero$hours:$minuts:$addZero$remainingSeconds")
+    hoursSpace = seconds / (CONSTANT_TIME * CONSTANT_TIME)
+    secondsSpace = seconds % CONSTANT_TIME
+    minutsSpace = (seconds % (CONSTANT_TIME * CONSTANT_TIME)) / CONSTANT_TIME
+
+    println(String.format("0" + "$hoursSpace" + ":" + "$minutsSpace" + ":" + "0" +"$secondsSpace"))
+
 }
 
-const val THE_CONSTANT_TIME:Byte = 60
+const val CONSTANT_TIME: Byte = 60
