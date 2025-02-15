@@ -11,7 +11,7 @@ fun main() {
     secondsSpace = seconds % CONSTANT_TIME
     minutsSpace = (seconds % (CONSTANT_TIME * CONSTANT_TIME)) / CONSTANT_TIME
 
-    println(String.format("0" + "$hoursSpace" + ":" + "$minutsSpace" + ":" + "0" +"$secondsSpace"))
+    println("%02d:%02d:%02d".format(hoursSpace,minutsSpace,secondsSpace))
 
 }
 
