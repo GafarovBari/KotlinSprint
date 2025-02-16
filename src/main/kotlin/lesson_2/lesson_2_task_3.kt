@@ -5,26 +5,13 @@ fun main() {
     val checkOutHours: Int = 9
     val checkOutMinutes: Int = 39
     val timeOfTravel: Int = 457
-    val hoursOfTravel: Int
-    val minutesOfTravel: Int
-    var arravalHours: Int
-    var arravalMinuts: Int
-    val arravalTime: String
 
-    hoursOfTravel = timeOfTravel / CONSTANT_TIME
-    minutesOfTravel = timeOfTravel % CONSTANT_TIME
-    arravalHours = checkOutHours + hoursOfTravel
-    arravalMinuts = checkOutMinutes + minutesOfTravel
+    val minutes: Int = timeOfTravel % CONSTANT_TIME
+    val arrivalMinutes: Int = (checkOutMinutes + minutes) % CONSTANT_TIME
+    val additionalMinutes: Int = checkOutMinutes + minutes
+    val arrivalHours: Int = (timeOfTravel / CONSTANT_TIME) + (additionalMinutes / CONSTANT_TIME) + checkOutHours
 
-    if (arravalMinuts > 59) {
-
-        arravalHours = arravalHours + 1
-        arravalMinuts = arravalMinuts - CONSTANT_TIME
-    }
-
-    arravalTime = "$arravalHours:$arravalMinuts"
-
-    println(arravalTime)
+    println("%02d:%02d".format(arrivalHours,arrivalMinutes))
 
 }
 
