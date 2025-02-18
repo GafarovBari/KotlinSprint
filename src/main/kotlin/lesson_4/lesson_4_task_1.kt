@@ -3,10 +3,9 @@ package org.example.lesson_4
 fun main() {
 
     val bookingToday: Int = 13
-    val bookingTomorrow:Int = 9
-
-    val availabilityToday: Boolean = bookingToday < 13
-    val availabilityTomorrow: Boolean = bookingTomorrow < 13
+    val bookingTomorrow: Int = 9
+    val availabilityToday: Boolean = bookingToday < NUMBER_OF_PLACES
+    val availabilityTomorrow: Boolean = bookingTomorrow < NUMBER_OF_PLACES
 
     println("Доступность столиков на сегодня: $availabilityToday")
     println("Доступность столиков на завтра: $availabilityTomorrow")
