@@ -2,12 +2,23 @@ package org.example.lesson_4
 
 fun main() {
 
-    val currentDamage: Boolean = true
+    val isWhole: Boolean = true
     val currentCrew: Int = 70
     val provisions: Int = 50
-    val weatherConditions: Boolean = true
+    val isSunny: Boolean = true
 
-    val readyToSail: Boolean = (currentDamage == DAMAGE && currentCrew <= NUMBER_CREW_MIN && currentCrew <= NUMBER_CREW_MAX && provisions > PROVISIONS_MIN_OUT && weatherConditions == NORM_WEATHER_CONDITIONS || weatherConditions !== NORM_WEATHER_CONDITIONS) || (currentDamage !== DAMAGE && currentCrew == NUMBER_CREW_MAX && weatherConditions == NORM_WEATHER_CONDITIONS && provisions >= PROVISIONS_MIN_OUT)
+    val readyToSail: Boolean = (
+            isWhole == DAMAGE
+            && currentCrew <= NUMBER_CREW_MIN
+            && currentCrew <= NUMBER_CREW_MAX
+            && provisions > PROVISIONS_MIN_OUT
+            && isSunny == NORM_WEATHER_CONDITIONS
+            || isSunny !== NORM_WEATHER_CONDITIONS)
+            || (
+            isWhole !== DAMAGE
+            && currentCrew == NUMBER_CREW_MAX
+            && isSunny == NORM_WEATHER_CONDITIONS
+            && provisions >= PROVISIONS_MIN_OUT)
 
     println(readyToSail)
 }
