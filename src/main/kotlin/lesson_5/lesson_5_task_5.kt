@@ -5,16 +5,18 @@ import kotlin.random.Random
 fun main() {
 
     val winningNumbers = mutableListOf<Int>()
+    val winningNumbersList: IntRange = 1..3
+    val numbersList: IntRange = 0..42
     while (winningNumbers.size < 3) {
-        val number = Random.nextInt(0, 43)
-        if (!winningNumbers.contains(number)){
+        val number = numbersList.random()
+        if (!winningNumbers.contains(number)) {
             winningNumbers.add(number)
         }
     }
 
     val userNumbers = mutableListOf<Int>()
 
-    for (i in 1..3) {
+    for (i in winningNumbersList) {
         println("Введите $i-е число от 0 до 42:")
         val userInput = readln().toInt()
         userNumbers.add(userInput)
@@ -33,3 +35,4 @@ fun main() {
 
     println("Выигрышные числа: $winningNumbers")
 }
+
