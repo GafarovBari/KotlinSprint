@@ -4,11 +4,12 @@ fun main() {
 
     val userName1: String = "Zaphoid"
     val userPassword1: String = "PanGalactic"
+    val userAnswerList = listOf<String>("YES", "Yes", "YEs", "yeS", "yes")
 
     println("Добро пожаловать на борт судна \"Heart of Gold\"!\nЯ бортовой робот - андроид Марвин, вы уже прошли авторизацию? (YES/NO):")
     val userAnswer = readln()
 
-    if (userAnswer == "YES") {
+    if (userAnswer in userAnswerList) {
         println("В таком случае введите пожалуйста свое имя пользователя и пароль:")
     }else {
         println("Бортовой робот-андроид Марвин печально запрашивает имя пользователя для регистрации")
